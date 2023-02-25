@@ -18,7 +18,7 @@ export const AppHeader = ({ data, fixedNumber, loading }) => {
     }, [firstCurrency, secondCurrency]);
 
     function isLoad(content) {
-        return loading ? <span>...</span> : content;
+        return loading ? <span className="currencyItem">...</span> : content;
     }
 
     return (
@@ -27,10 +27,10 @@ export const AppHeader = ({ data, fixedNumber, loading }) => {
                 <Container>
                     <Navbar.Brand> Current exchange rate: </Navbar.Brand>
                     <Navbar.Brand>
-                        UAH/USD <span>{isLoad(usd)}</span>
+                        UAH/USD <span className="currencyItem">{isLoad(usd)}</span>
                     </Navbar.Brand>
                     <Navbar.Brand>
-                        UAH/EUR <span>{isLoad(eur)}</span>
+                        UAH/EUR <span className="currencyItem">{isLoad(eur)}</span>
                     </Navbar.Brand>
                 </Container>
             </Navbar>

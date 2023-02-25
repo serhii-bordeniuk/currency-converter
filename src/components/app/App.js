@@ -31,25 +31,29 @@ function App() {
         return number?.toFixed(2);
     }
 
-    function handleAmountOneChange(amount) {
+    function handleAmountOneChange(e) {
+        const amount = e.target.value;
         const result = fixedNumber((amount * rates[currency2]) / rates[currency1]);
         setAmount2(result);
         setAmount1(amount);
     }
 
-    function handleCurrencyOneChange(currency) {
+    function handleCurrencyOneChange(e) {
+        const currency = e.target.value;
         const result = fixedNumber((amount1 * rates[currency2]) / rates[currency]);
         setAmount2(result);
         setCurrency1(currency);
     }
 
-    function handleAmountTwoChange(amount) {
+    function handleAmountTwoChange(e) {
+        const amount = e.target.value;
         const result = fixedNumber((amount * rates[currency1]) / rates[currency2]);
         setAmount1(result);
         setAmount2(amount);
     }
 
-    function handleCurrencyTwoChange(currency) {
+    function handleCurrencyTwoChange(e) {
+        const currency = e.target.value;
         const result = fixedNumber((amount2 * rates[currency1]) / rates[currency]);
         setAmount1(result);
         setCurrency2(currency);
